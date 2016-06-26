@@ -1,5 +1,5 @@
 import Ember from 'ember';
-
+import wg from 'wickedgood';
 // import { default as math, Pi } from 'math';
 
 // math.sqrt(4); // 2
@@ -8,6 +8,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	beforeModel() {
 		this._super(...arguments);
+		console.log(wg.ember);
 		// console.log('Should be 2', math.sqrt(4));
 		// console.log('Should be PI', Pi);
 	}

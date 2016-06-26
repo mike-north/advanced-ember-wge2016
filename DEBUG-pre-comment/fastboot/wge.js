@@ -496,8 +496,7 @@ define('wge/router', ['exports', 'ember', 'wge/config/environment'], function (e
 
   exports['default'] = Router;
 });
-define('wge/routes/application', ['exports', 'ember'], function (exports, _ember) {
-
+define('wge/routes/application', ['exports', 'ember', 'wickedgood'], function (exports, _ember, _wickedgood) {
 	// import { default as math, Pi } from 'math';
 
 	// math.sqrt(4); // 2
@@ -506,6 +505,7 @@ define('wge/routes/application', ['exports', 'ember'], function (exports, _ember
 	exports['default'] = _ember['default'].Route.extend({
 		beforeModel: function beforeModel() {
 			this._super.apply(this, arguments);
+			console.log(_wickedgood['default'].ember);
 			// console.log('Should be 2', math.sqrt(4));
 			// console.log('Should be PI', Pi);
 		}

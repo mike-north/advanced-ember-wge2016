@@ -449,8 +449,7 @@ define('wge/router', ['exports', 'ember', 'wge/config/environment'], function (e
 
   exports['default'] = Router;
 });
-define('wge/routes/application', ['exports', 'ember'], function (exports, _ember) {
-
+define('wge/routes/application', ['exports', 'ember', 'wickedgood'], function (exports, _ember, _wickedgood) {
 	// import { default as math, Pi } from 'math';
 
 	// math.sqrt(4); // 2
@@ -459,6 +458,7 @@ define('wge/routes/application', ['exports', 'ember'], function (exports, _ember
 	exports['default'] = _ember['default'].Route.extend({
 		beforeModel: function beforeModel() {
 			this._super.apply(this, arguments);
+			console.log(_wickedgood['default'].ember);
 			// console.log('Should be 2', math.sqrt(4));
 			// console.log('Should be PI', Pi);
 		}
@@ -1163,7 +1163,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("wge/app")["default"].create({"name":"wge","version":"0.0.0+377d2730"});
+  require("wge/app")["default"].create({"name":"wge","version":"0.0.0+ac6eb75c"});
 }
 
 define('~fastboot/app-factory', ['wge/app', 'wge/config/environment'], function(App, config) {

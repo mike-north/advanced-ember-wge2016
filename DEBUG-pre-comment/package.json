@@ -25,7 +25,7 @@
       },
       "APP": {
         "name": "wge",
-        "version": "0.0.0+377d2730",
+        "version": "0.0.0+ac6eb75c",
         "autoboot": false
       },
       "exportApplicationGlobal": true

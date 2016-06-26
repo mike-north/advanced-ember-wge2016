@@ -7,6 +7,14 @@ var runningTests = false;
 
 /* jshint ignore:end */
 
+;(function() {
+	'use strict';
+	define('wickedgood', [], function() {
+		return {
+			default: { ember: '2016' }
+		};
+	});
+}())
 ;var loader, define, requireModule, require, requirejs;
 
 (function(global) {
