@@ -8,13 +8,16 @@ export default Ember.Service.extend({
   init() {
     this._super(...arguments);
     this.set('current', new Date().valueOf());
-
-    this._task = setInterval(() => {
-      this.set('current', new Date().valueOf());
-    }, UPDATE_INTERVAL);
+    if (typeof FastBoot === 'undefined') {
+      this._task = setInterval(() => {
+        this.set('current', new Date().valueOf());
+      }, UPDATE_INTERVAL);
+    }
   },
   willDestroy() {
-    clearInterval(this._task);
+    if (this._task) {
+      clearInterval(this._task);
+    }
     this._super(...arguments);
   }
 });
