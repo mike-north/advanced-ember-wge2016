@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.0",
+    "node-fetch": "^1.3.3"
+  },
+  "fastboot": {
+    "moduleWhitelist": [
+      "moment",
+      "moment-timezone",
+      "node-fetch"
+    ],
+    "manifest": {
+      "appFile": "fastboot/wge.js",
+      "vendorFile": "fastboot/vendor.js",
+      "htmlFile": "index.html"
+    },
+    "appConfig": {
+      "modulePrefix": "wge",
+      "environment": "development",
+      "baseURL": "/",
+      "locationType": "auto",
+      "EmberENV": {
+        "FEATURES": {}
+      },
+      "APP": {
+        "name": "wge",
+        "version": "0.0.0+377d2730",
+        "autoboot": false
+      },
+      "exportApplicationGlobal": true
+    }
+  }
+}
