@@ -1,11 +1,26 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Filter = require('broccoli-filter');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
   });
+
+
+  Commenter.prototype = Object.create(Filter.prototype);
+  Commenter.prototype.constructor = Commenter;
+  function Commenter(inputNode) {
+    Filter.call(this, inputNode);
+  }
+
+  Commenter.prototype.extensions = ['js'];
+  Commenter.prototype.targetExtension = 'js';
+
+  Commenter.prototype.processString = function(content, relativePath) {
+    return "/*(c) 2016 🌭🌮🚀*/\n" + content;
+  };
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -20,5 +35,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  return new Commenter(app.toTree());
 };
