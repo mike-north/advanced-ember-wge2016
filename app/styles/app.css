@@ -1,0 +1,33 @@
+nav {
+	width: 100%;
+	background: slategrey;
+}
+
+nav .logo {
+	width: 100px;
+	padding: 20px;
+	background-color: #f00;
+	float: left;
+}
+
+nav ul.nav-menu {
+	margin-left: 100px;
+}
+
+nav ul.nav-menu li {
+	padding: 20px;
+	display: inline-block;
+}
+
+nav ul.nav-menu li.active {
+	background-color: black;
+	color: white;
+}
+
+nav ul.nav-menu li.ember-transitioning-in {
+	background-color: black;
+	color: grey;
+}
+nav ul.nav-menu li.ember-transitioning-out {
+	opacity: 0.5;
+}
